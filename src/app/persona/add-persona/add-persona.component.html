@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Añadir persona</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Ingrese datos</h6>
+        <p class="card-text">Todos los campos deberan ser llenados obligatoriamente</p>
+            <div class="form-row">
+                <div class="col">
+                    <label for="inputEmail4">Nombres</label>
+                    <input type="text" class="form-control" placeholder="First name" [(ngModel)]="personaModel.nombres" name="nombres">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Apellidos</label>
+                    <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="personaModel.apellidos">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="inputEmail4">Numero de documento</label>
+                    <input type="text" class="form-control" placeholder="First name" [(ngModel)]="personaModel.n_doc" name="n_doc">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Tipo de documento</label>
+                    <select id="inputState" class="form-control" [(ngModel)]="personaModel.id_tipo_doc">
+                        <option *ngFor="let tip of tipodocumentos" [value]="tip.ID_TIPO_DOC">{{tip.NOMBRE}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col">
+                    <label for="inputEmail4">Sexo</label>
+                    <select id="inputState" class="form-control" [(ngModel)]="personaModel.sexo">
+                        <option *ngFor="let s of sexos" [value]="s.idsexo">{{s.nombre}}</option>
+                    </select>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        <a class="card-link" (click)="create()">Registrar</a>
+        <a class="card-link" routerLink="/listpersona">Volver</a>
+    </div>
+</div>

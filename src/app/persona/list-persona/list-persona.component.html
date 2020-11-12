@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    Lista de personas
+  </div>
+  <div class="card-body">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">SEXO</th>
+            <th scope="col">Numero de documento</th>
+            <th scope="col">Tipo de documento</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">EDITAR</th>
+            <th scope="col">ELIMNINAR</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let per of personas">
+            <th scope="row">{{per.ID_PERSONA}}</th>
+            <td>{{per.NOMBRES}}</td>
+            <td>{{per.APELLIDOS}}</td>
+            <td>{{per.SEXO}}</td>
+            <td>{{per.N_DOC}}</td>
+            <td>{{per.ID_TIPO_DOC}}</td>
+            <td>{{per.ESTADO}}</td>
+            <td><button class="btn btn-success" [routerLink]="['/editpersona', per.ID_PERSONA]"><i class="fas fa-pencil-alt"></i></button></td>
+            <td><button class="btn btn-danger" (click)="delPersona(per.ID_PERSONA)"><i class="fas fa-trash"></i></button></td>
+
+
+          </tr>
+
+        </tbody>
+      </table>
+  </div>
+</div>
